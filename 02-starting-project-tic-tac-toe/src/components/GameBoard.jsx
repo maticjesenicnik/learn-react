@@ -1,22 +1,7 @@
-const initialGameBoard = [
-  [null, null, null],
-  [null, null, null],
-  [null, null, null],
-];
-
-export default function GameBoard({ onPlayerTurn, turns }) {
-  let gameBoard = initialGameBoard;
-
-  turns.forEach(turn => {
-    const { player, square } = turn;
-    const { row, col } = square;
-
-    gameBoard[row][col] = player;
-  });
-
+export default function GameBoard({ onPlayerTurn, board }) {
   return (
     <ol id="game-board">
-      {gameBoard.map((row, rowIndex) => (
+      {board.map((row, rowIndex) => (
         <li key={rowIndex}>
           <ol>
             {row.map((playerSymbol, colIndex) => (
