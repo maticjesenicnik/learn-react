@@ -2,6 +2,7 @@ import { useState } from "react";
 import GameBoard from "./components/GameBoard";
 import Player from "./components/Player";
 import Log from "./components/Log";
+import GameOver from "./components/GameOver";
 import { WINNING_COMBINATIONS } from "./winning-combinations";
 
 function deriveActivePlayer(gameTurns) {
@@ -23,7 +24,7 @@ const initialGameBoard = [
 function App() {
   const [gameTurns, setGameTurns] = useState([]);
   const activePlayer = deriveActivePlayer(gameTurns);
-  let winner;
+  let winner, draw;
   let gameBoard = initialGameBoard;
 
   gameTurns.forEach(turn => {
@@ -40,6 +41,8 @@ function App() {
 
     if (firstSquareSymbol && firstSquareSymbol === secondSquareSymbol && firstSquareSymbol === thirdSquareSymbol) {
       winner = firstSquareSymbol;
+    } else if (gameTurns.length === 9) {
+      draw = true;
     }
   }
 
@@ -58,7 +61,7 @@ function App() {
           <Player initialName="Player 1" symbol="X" isActive={activePlayer === "X"} />
           <Player initialName="Player 2" symbol="O" isActive={activePlayer === "O"} />
         </ol>
-        {winner && <p>Player {winner} wins!</p>}
+        {(winner || draw) && <GameOver winner={winner} />}
         <GameBoard onPlayerTurn={handlePlayerTurn} turns={gameTurns} board={gameBoard} />
       </div>
       <Log gameTurns={gameTurns} />
