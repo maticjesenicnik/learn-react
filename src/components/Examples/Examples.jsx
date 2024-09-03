@@ -1,8 +1,8 @@
 import { useState } from "react";
-import TabButton from "./TabButton/TabButton";
+import TabButton from "../TabButton/TabButton";
 import { EXAMPLES } from "../../data";
 import "./Examples.css";
-import Section from "../Section/Section";
+import Section from "../Section";
 
 export default function Examples() {
   const [selectedTopic, setSelectedTopic] = useState();
