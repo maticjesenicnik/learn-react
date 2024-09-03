@@ -6,20 +6,17 @@ const initialGameBoard = [
   [null, null, null],
 ];
 
-export default function GameBoard() {
+export default function GameBoard({ onPlayerTurn, activePlayerSymbol }) {
   const [gameBoard, setGameBoard] = useState(initialGameBoard);
-  const [playerSymbol, setPlayerSymbol] = useState("X");
 
   const handlePlayerTurn = (rowIndex, colIndex) => {
     setGameBoard(previousBoardGame => {
       const updatedGameBoard = [...previousBoardGame.map(innerArray => [...innerArray])];
-      updatedGameBoard[rowIndex][colIndex] = playerSymbol;
+      updatedGameBoard[rowIndex][colIndex] = activePlayerSymbol;
       return updatedGameBoard;
     });
 
-    setPlayerSymbol(previousPlayerSymbol => {
-      return previousPlayerSymbol === "X" ? "O" : "X";
-    });
+    onPlayerTurn();
   };
 
   return (
