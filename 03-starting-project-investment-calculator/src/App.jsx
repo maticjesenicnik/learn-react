@@ -1,9 +1,13 @@
 import Header from "./components/Header";
+import UserInputGroup from "./components/UserInputGroup";
 
 function App() {
   return (
-    <Header />
-  )
+    <>
+      <Header />
+      <UserInputGroup />
+    </>
+  );
 }
 
-export default App
+export default App;
