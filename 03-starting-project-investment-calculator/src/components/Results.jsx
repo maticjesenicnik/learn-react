@@ -8,19 +8,26 @@ export default function Results({ userInput }) {
       <table id="result">
         <thead>
           <th>Year</th>
-          <th>Interest</th>
-          <th>End of year value</th>
-          <th>Added value this year</th>
+          <th>Investment Value</th>
+          <th>Interest (Year)</th>
+          <th>Total Interest</th>
+          <th>Invested Capital</th>
         </thead>
         <tbody>
-          {results.map((result, index) => (
-            <tr key={index}>
-              <td>{result.year}</td>
-              <td>{formatter.format(result.interest)}</td>
-              <td>{formatter.format(result.valueEndOfYear)}</td>
-              <td>{formatter.format(result.annualInvestment)}</td>
-            </tr>
-          ))}
+          {results.map((result, index) => {
+            const totalInterest = result.valueEndOfYear - result.annualInvestment * result.year - userInput.initialInvestment;
+            const totalAmountInvested = result.year * userInput.annualInvestment + userInput.initialInvestment;
+
+            return (
+              <tr key={index}>
+                <td>{result.year}</td>
+                <td>{formatter.format(result.valueEndOfYear)}</td>
+                <td>{formatter.format(result.interest)}</td>
+                <td>{formatter.format(totalInterest)}</td>
+                <td>{formatter.format(totalAmountInvested)}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </section>
