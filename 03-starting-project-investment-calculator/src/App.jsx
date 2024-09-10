@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Results from "./components/Results";
 import UserInputGroup from "./components/UserInputGroup";
 
-import { useState } from "react";
+import { StrictMode, useState } from "react";
 
 function App() {
   const [userInput, setUserInput] = useState({
@@ -21,12 +21,15 @@ function App() {
     });
   };
 
+  const isUserInputValid = userInput.duration >= 1;
+
   return (
-    <>
+    <StrictMode>
       <Header />
       <UserInputGroup userInput={userInput} handleChange={handleChange} />
-      <Results userInput={userInput} />
-    </>
+      {!isUserInputValid && <p className="center">Please enter a duration of at least 1 year.</p>}
+      {isUserInputValid && <Results userInput={userInput} />}
+    </StrictMode>
   );
 }
 
