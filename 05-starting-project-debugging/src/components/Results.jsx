@@ -5,7 +5,7 @@ export default function Results({ input }) {
   calculateInvestmentResults(input, results);
 
   if (results.length === 0) {
-    return <p>No data available.</p>;
+    return <p className="center">No data available.</p>;
   }
 
   const initialInvestment = results[0].valueEndOfYear - results[0].interest - results[0].annualInvestment;
