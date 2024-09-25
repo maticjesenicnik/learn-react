@@ -2,6 +2,7 @@ import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import NewProject from "./components/NewProject";
 import NoProjectSelected from "./components/NoProjectSelected";
+import Modal from "./components/Modal";
 
 function App() {
   const [projectsState, setProjectsState] = useState({
@@ -33,10 +34,19 @@ function App() {
     });
   };
 
+  const handleCancelAddProject = () => {
+    setProjectsState(prevState => {
+      return {
+        ...prevState,
+        selectedProjectId: undefined,
+      };
+    });
+  };
+
   let content;
 
   if (projectsState.selectedProjectId === null) {
-    content = <NewProject onSave={handleAddNewProject} />;
+    content = <NewProject onSave={handleAddNewProject} onCancel={handleCancelAddProject} />;
   } else if (projectsState.selectedProjectId === undefined) {
     content = <NoProjectSelected onStartAddProject={handleStartAddProject} />;
   }
