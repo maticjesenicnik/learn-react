@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar";
 import NewProject from "./components/NewProject";
 import NoProjectSelected from "./components/NoProjectSelected";
 import Modal from "./components/Modal";
+import SelectedProject from "./components/SelectedProject";
 
 function App() {
   const [projectsState, setProjectsState] = useState({
@@ -43,7 +44,17 @@ function App() {
     });
   };
 
-  let content;
+  const handleSelectProject = id => {
+    setProjectsState(prevState => {
+      return {
+        ...prevState,
+        selectedProjectId: id,
+      };
+    });
+  };
+
+  const selectedProject = projectsState.projects.find(project => project.id === projectsState.selectedProjectId);
+  let content = <SelectedProject project={selectedProject} />;
 
   if (projectsState.selectedProjectId === null) {
     content = <NewProject onSave={handleAddNewProject} onCancel={handleCancelAddProject} />;
@@ -53,7 +64,12 @@ function App() {
 
   return (
     <main className="h-screen mt-8 flex gap-8">
-      <Sidebar onStartAddProject={handleStartAddProject} projects={projectsState.projects} />
+      <Sidebar
+        onStartAddProject={handleStartAddProject}
+        onSelectProject={handleSelectProject}
+        selectedProjectId={projectsState.selectedProjectId}
+        projects={projectsState.projects}
+      />
       {content}
     </main>
   );
