@@ -1,6 +1,19 @@
+import { useRef } from "react";
 import Input from "./Input";
 
-export default function NewProject() {
+export default function NewProject({ onSave }) {
+  const titleInput = useRef();
+  const descriptionInput = useRef();
+  const dueDateInput = useRef();
+
+  const handleSave = () => {
+    const title = titleInput.current.value;
+    const description = descriptionInput.current.value;
+    const dueDate = dueDateInput.current.value;
+
+    onSave({ title, description, dueDate });
+  };
+
   return (
     <div className="w-[35rem] mt-16">
       <menu className="flex items-center justify-end gap-4 my-4">
@@ -8,13 +21,15 @@ export default function NewProject() {
           <button className="text-stone-800 hover:text-stone-950">Cancel</button>
         </li>
         <li>
-          <button className="px-6 py-2 rounded-md bg-stone-800 text-stone-50 hover:bg-stone-950">Save</button>
+          <button className="px-6 py-2 rounded-md bg-stone-800 text-stone-50 hover:bg-stone-950" onClick={handleSave}>
+            Save
+          </button>
         </li>
       </menu>
       <div>
-        <Input label="Title" />
-        <Input label="Description" textarea />
-        <Input label="Due Date" />
+        <Input type="text" ref={titleInput} label="Title" />
+        <Input ref={descriptionInput} label="Description" textarea />
+        <Input type="date" ref={dueDateInput} label="Due Date" />
       </div>
     </div>
   );
