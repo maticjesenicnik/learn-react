@@ -12,12 +12,19 @@ export default function QuestionTimer({ timeout, onTimeout }) {
   }, [timeout, onTimeout]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setRemainingTime(prevRemainingTime => prevRemainingTime - 100);
-    }, 100);
+    let startTime, rafId;
+
+    const loop = currentTime => {
+      const deltaTime = currentTime - startTime || 0;
+      setRemainingTime(prevRemainingTime => prevRemainingTime - deltaTime);
+      startTime = currentTime;
+      rafId = requestAnimationFrame(loop);
+    };
+
+    rafId = requestAnimationFrame(loop);
 
     return () => {
-      clearInterval(interval);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 
