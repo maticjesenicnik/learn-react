@@ -21,17 +21,21 @@ app.use((req, res, next) => {
 app.get("/places", async (req, res) => {
   const fileContent = await fs.readFile("./data/places.json");
 
-  const placesData = JSON.parse(fileContent);
+  setTimeout(() => {
+    const placesData = JSON.parse(fileContent);
 
-  res.status(200).json({ places: placesData });
+    res.status(200).json({ places: placesData });
+  }, 800);
 });
 
 app.get("/user-places", async (req, res) => {
   const fileContent = await fs.readFile("./data/user-places.json");
 
-  const places = JSON.parse(fileContent);
+  setTimeout(() => {
+    const places = JSON.parse(fileContent);
 
-  res.status(200).json({ places });
+    res.status(200).json({ places });
+  }, 800);
 });
 
 app.put("/user-places", async (req, res) => {
