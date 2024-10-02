@@ -4,12 +4,19 @@ export default function ProgressBar({ timer }) {
   const [remainingTime, setRemainingTime] = useState(timer);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setRemainingTime(prevTime => prevTime - 10);
-    }, 10);
+    let startTime, rafId;
+
+    const loop = currentTime => {
+      const deltaTime = currentTime - startTime || 0;
+      setRemainingTime(prevRemainingTime => prevRemainingTime - deltaTime);
+      startTime = currentTime;
+      rafId = requestAnimationFrame(loop);
+    };
+
+    rafId = requestAnimationFrame(loop);
 
     return () => {
-      clearInterval(interval);
+      cancelAnimationFrame(rafId);
     };
   }, []);
 
