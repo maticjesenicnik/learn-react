@@ -39,12 +39,12 @@ function App() {
         return prevPickedPlaces;
       }
       const place = AVAILABLE_PLACES.find(place => place.id === id);
-      return [place, ...prevPickedPlaces];
+      return [...prevPickedPlaces, place];
     });
 
     const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
     if (storedIds.indexOf(id) === -1) {
-      localStorage.setItem("selectedPlaces", JSON.stringify([id, ...storedIds]));
+      localStorage.setItem("selectedPlaces", JSON.stringify([...storedIds, id]));
     }
   }
 

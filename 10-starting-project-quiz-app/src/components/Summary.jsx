@@ -29,10 +29,12 @@ export default function Summary({ userAnswers }) {
       <ol>
         {userAnswers.map((answer, index) => {
           let cssClass = "user-answer";
+          const correctAnswer = QUESTIONS[index].answers[0];
+          const isCorrect = answer === correctAnswer;
 
           if (answer === null) {
             cssClass += " skipped";
-          } else if (answer === QUESTIONS[index].answers[0]) {
+          } else if (isCorrect) {
             cssClass += " correct";
           } else {
             cssClass += " wrong";
@@ -43,6 +45,7 @@ export default function Summary({ userAnswers }) {
               <h3>{index + 1}</h3>
               <p className="question">{QUESTIONS[index].text}</p>
               <p className={cssClass}>{answer ?? "Skipped"}</p>
+              {!isCorrect && <p className="user-answer correct">The correct answer was: {correctAnswer}</p>}
             </li>
           );
         })}
