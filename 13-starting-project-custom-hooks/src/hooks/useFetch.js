@@ -21,5 +21,5 @@ export default function useFetch(fetchFunction, initialValue) {
     fetchData();
   }, [fetchFunction]);
 
-  return { data, isFetching, error };
+  return { data, setData, isFetching, error };
 }
