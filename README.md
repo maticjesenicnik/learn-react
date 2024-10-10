@@ -15,6 +15,12 @@ Each folder represents a different project corresponding to specific sections of
 7. **07-starting-project-project-management-app**: Creating a basic project management app.
 8. **08-starting-project-advanced-state-management**: Managing complex state with advanced React techniques.
 9. **09-starting-project-handling-side-effects**: Handling side effects and async operations in React.
+10. **10-starting-project-quiz-app**: Building a quiz app with React.
+11. **11-starting-project-optimization-techniques**: Implementing optimization techniques in React apps.
+12. **12-starting-project-http-requests**: Handling HTTP requests in React.
+13. **13-starting-project-custom-hooks**: Creating custom hooks in React.
+14. **14-starting-project-forms-and-user-input**: Managing forms and user input in React.
+15. **15-starting-project-food-ordering-app**: Developing a food ordering app with React.
 
 ## How to Run
 
@@ -22,7 +28,11 @@ Each project can be run individually using the following steps:
 
 1. Navigate to the project directory.
 2. Run `npm install` to install dependencies.
-3. Use `npm run dev` to launch the development server.
+3. If the project has a backend, navigate to the `backend` folder (if applicable), run `npm install`, and then start the server with `node app.js`. Make sure you have [Node.js](https://nodejs.org) installed.
+4. Use `npm run dev` to launch the development server for the frontend.
+
+Ensure that both the frontend and backend are running for projects that require it.
+
 
 ## Course Details
 
