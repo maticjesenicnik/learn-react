@@ -61,6 +61,10 @@ h1 {
   gap: 1rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .meal-item {
   background-color: #1d1a16;
   border-radius: 1rem;
