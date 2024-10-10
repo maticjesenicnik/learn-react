@@ -9,7 +9,7 @@ export default function Header() {
         <h1>REACTFOOD</h1>
       </div>
       <nav>
-        <button>Cart (0)</button>
+        <button className="text-button">Cart (0)</button>
       </nav>
     </header>
   );
