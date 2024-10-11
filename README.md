@@ -6,21 +6,21 @@ This repository contains all my projects while learning React through the Udemy 
 
 Each folder represents a different project corresponding to specific sections of the course. Below is a list of the projects:
 
-1. **01-starting-project-basics**: Introduction to React basics.
-2. **02-starting-project-tic-tac-toe**: Building a simple Tic-Tac-Toe game.
-3. **03-starting-project-investment-calculator**: Developing an investment calculator.
-4. **04-starting-project-styling-components**: Exploring different ways to style React components.
-5. **05-starting-project-debugging**: Learning debugging techniques in React.
-6. **06-starting-project-refs-and-portals**: Using Refs and Portals for DOM manipulation.
-7. **07-starting-project-project-management-app**: Creating a basic project management app.
-8. **08-starting-project-advanced-state-management**: Managing complex state with advanced React techniques.
-9. **09-starting-project-handling-side-effects**: Handling side effects and async operations in React.
-10. **10-starting-project-quiz-app**: Building a quiz app with React.
-11. **11-starting-project-optimization-techniques**: Implementing optimization techniques in React apps.
-12. **12-starting-project-http-requests**: Handling HTTP requests in React.
-13. **13-starting-project-custom-hooks**: Creating custom hooks in React.
-14. **14-starting-project-forms-and-user-input**: Managing forms and user input in React.
-15. **15-starting-project-food-ordering-app**: Developing a food ordering app with React.
+**01-starting-project-basics**: Introduction to React basics. <br>
+**02-starting-project-tic-tac-toe**: Building a simple Tic-Tac-Toe game. <br>
+**03-starting-project-investment-calculator**: Developing an investment calculator. <br>
+**04-starting-project-styling-components**: Exploring different ways to style React components. <br>
+**05-starting-project-debugging**: Learning debugging techniques in React. <br>
+**06-starting-project-refs-and-portals**: Using Refs and Portals for DOM manipulation. <br>
+**07-starting-project-project-management-app**: Creating a basic project management app. <br>
+**08-starting-project-advanced-state-management**: Managing complex state with advanced React techniques. <br>
+**09-starting-project-handling-side-effects**: Handling side effects and async operations in React. <br>
+**10-starting-project-quiz-app**: Building a quiz app with React. <br>
+**11-starting-project-optimization-techniques**: Implementing optimization techniques in React apps. <br>
+**12-starting-project-http-requests**: Handling HTTP requests in React. <br>
+**13-starting-project-custom-hooks**: Creating custom hooks in React. <br>
+**14-starting-project-forms-and-user-input**: Managing forms and user input in React. <br>
+**15-starting-project-food-ordering-app**: Developing a food ordering app with React. <br>
 
 ## How to Run
 
