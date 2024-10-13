@@ -1,15 +1,26 @@
 import React from "react";
-import useFetch from "../hooks/useFetch";
-import { fetchMeals } from "../http";
+import useHttp from "../hooks/useHttp";
+import Error from "./Error";
 import MealItem from "./MealItem";
 
+const requestConfig = {};
+
 export default function Meals() {
-  const { data: meals, isFetching, error } = useFetch(fetchMeals, []);
+  const { data: meals, isLoading, error } = useHttp("http://localhost:3000/meals", requestConfig, []);
+
+  if (isLoading) {
+    return <p className="center">Fetching meals...</p>;
+  }
+
+  if (error) {
+    return <Error title="Failed to fetch meals" message={error} />;
+  }
 
   return (
     <ul id="meals">
-      {isFetching && <p className="text-center">Fetching available meals to order...</p>}
-      {!isFetching && meals.map(meal => <MealItem key={meal.id} meal={meal} />)}
+      {meals.map(meal => (
+        <MealItem key={meal.id} meal={meal} />
+      ))}
     </ul>
   );
 }
