@@ -4,7 +4,7 @@ import { fetchMeals } from "../http";
 import MealItem from "./MealItem";
 
 export default function Meals() {
-  const { data: meals, setData: setMeals, isFetching, error } = useFetch(fetchMeals, []);
+  const { data: meals, isFetching, error } = useFetch(fetchMeals, []);
 
   return (
     <ul id="meals">
