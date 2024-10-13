@@ -9,10 +9,14 @@ import Modal from "./UI/Modal";
 export default function Cart() {
   const { meals, addMeal, removeMeal } = useContext(CartContext);
   const userProgressContext = useContext(UserProgressContext);
-  const cartTotal = meals.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const cartTotal = meals.reduce((total, meal) => total + meal.price * meal.quantity, 0);
 
   const handleCloseCart = () => {
     userProgressContext.hideCart();
+  };
+
+  const handleGoToCheckout = () => {
+    userProgressContext.openCheckout();
   };
 
   return (
@@ -28,6 +32,7 @@ export default function Cart() {
         <Button textOnly onClick={handleCloseCart}>
           Close
         </Button>
+        {meals.length > 0 && <Button onClick={handleGoToCheckout}>Go to Checkout</Button>}
       </p>
     </Modal>
   );
