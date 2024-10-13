@@ -27,7 +27,7 @@ const shoppingCartReducer = (state, action) => {
   }
 
   if (action.type === "REMOVE_MEAL") {
-    const existingMealIndex = state.meals.findIndex(meal => meal.id === action.meal.id);
+    const existingMealIndex = state.meals.findIndex(meal => meal.id === action.id);
     const meal = state.meals[existingMealIndex];
     const updatedMeals = [...state.meals];
 
@@ -79,9 +79,9 @@ export default function ShoppingCartProvider({ children }) {
 
   const contextValue = {
     meals: shoppingCartState.meals,
-    addMeal: addMeal,
-    removeMeal: removeMeal,
-    clearCart: clearCart,
+    addMeal,
+    removeMeal,
+    clearCart,
   };
 
   return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;

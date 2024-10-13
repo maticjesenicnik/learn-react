@@ -1,13 +1,18 @@
+import Cart from "./components/Cart";
 import Header from "./components/Header";
 import Meals from "./components/Meals";
 import ShoppingCartProvider from "./context/ShoppingCartProvider";
+import { UserProgressProvider } from "./context/UserProgressProvider";
 
 function App() {
   return (
-    <ShoppingCartProvider>
-      <Header />
-      <Meals />
-    </ShoppingCartProvider>
+    <UserProgressProvider>
+      <ShoppingCartProvider>
+        <Header />
+        <Meals />
+        <Cart />
+      </ShoppingCartProvider>
+    </UserProgressProvider>
   );
 }
 
