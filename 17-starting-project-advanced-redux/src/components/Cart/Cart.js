@@ -5,6 +5,7 @@ import CartItem from "./CartItem";
 
 const Cart = props => {
   const items = useSelector(state => state.cart.items);
+  const totalAmount = useSelector(state => state.cart.totalAmount);
 
   return (
     <Card className={classes.cart}>
@@ -14,6 +15,7 @@ const Cart = props => {
           <CartItem key={item.id} item={item} />
         ))}
       </ul>
+      <p>Total amount: ${totalAmount.toFixed(2)}</p>
     </Card>
   );
 };
