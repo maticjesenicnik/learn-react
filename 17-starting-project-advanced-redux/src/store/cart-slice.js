@@ -1,16 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { uiActions } from "./ui-slice";
 
 const initialState = {
   items: [],
   totalQuantity: 0,
   totalAmount: 0,
+  isChanged: false,
 };
 
-const cartSlice = createSlice({
+export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    replaceCart(state, action) {
+      state.totalAmount = action.payload.totalAmount;
+      state.totalQuantity = action.payload.totalQuantity;
+      state.items = action.payload.items;
+    },
     addItem(state, action) {
       const newItem = action.payload;
       const existingItem = state.items.find(item => item.id === newItem.id);
@@ -30,6 +35,7 @@ const cartSlice = createSlice({
 
       state.totalQuantity++;
       state.totalAmount += newItem.price;
+      state.isChanged = true;
     },
     removeItem(state, action) {
       const id = action.payload;
@@ -44,52 +50,10 @@ const cartSlice = createSlice({
 
       state.totalQuantity--;
       state.totalAmount -= existingItem.price;
+      state.isChanged = true;
     },
   },
 });
-
-export const sendCartData = cart => {
-  return async dispatch => {
-    dispatch(
-      uiActions.showNotification({
-        status: "pending",
-        title: "Sending",
-        message: "Sending cart data...",
-      })
-    );
-
-    const sendRequest = async () => {
-      const response = await fetch(`${process.env.REACT_APP_DATABASE_URL}/cart.json`, {
-        method: "PUT",
-        body: JSON.stringify(cart),
-      });
-
-      if (!response.ok) {
-        throw new Error("Sending data cart failed.");
-      }
-    };
-
-    try {
-      await sendRequest();
-
-      dispatch(
-        uiActions.showNotification({
-          status: "success",
-          title: "Success!",
-          message: "Sent cart data successfully!",
-        })
-      );
-    } catch (error) {
-      dispatch(
-        uiActions.showNotification({
-          status: "error",
-          title: "Error!",
-          message: "Sending cart data failed!",
-        })
-      );
-    }
-  };
-};
 
 export default cartSlice.reducer;
 
