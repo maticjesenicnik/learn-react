@@ -31,7 +31,7 @@ export default function Products() {
       <ul>
         {DUMMY_PRODUCTS.map(product => (
           <li>
-            <Link key={product.id} to={`/products/${product.id}`}>
+            <Link key={product.id} to={product.id}>
               {product.title}
             </Link>
           </li>
