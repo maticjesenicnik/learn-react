@@ -6,6 +6,139 @@
       "date": "2023-02-22",
       "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
       "description": "Join this amazing event and connect with fellow developers."
+    },
+    {
+      "id": "e2",
+      "title": "Tech Conference 2024",
+      "date": "2024-05-10",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "A conference about the latest in tech innovations."
+    },
+    {
+      "id": "e3",
+      "title": "React Workshop",
+      "date": "2024-03-22",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "A hands-on workshop for building React applications."
+    },
+    {
+      "id": "e4",
+      "title": "Hackathon 2024",
+      "date": "2024-06-15",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "A 48-hour coding challenge to solve real-world problems."
+    },
+    {
+      "id": "e5",
+      "title": "AI and ML Summit",
+      "date": "2024-04-30",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Discussing advancements in AI and Machine Learning."
+    },
+    {
+      "id": "e6",
+      "title": "Startup Pitch Event",
+      "date": "2024-09-12",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Entrepreneurs pitch their startups to investors."
+    },
+    {
+      "id": "e7",
+      "title": "JavaScript Meetup",
+      "date": "2024-01-18",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Networking event for JavaScript developers."
+    },
+    {
+      "id": "e8",
+      "title": "Cybersecurity Forum",
+      "date": "2024-07-21",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Talks on the latest trends in cybersecurity."
+    },
+    {
+      "id": "e9",
+      "title": "Cloud Computing Expo",
+      "date": "2024-11-05",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Exhibitions and talks on cloud technology."
+    },
+    {
+      "id": "e10",
+      "title": "Frontend Masters",
+      "date": "2024-02-28",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "A deep dive into frontend development techniques."
+    },
+    {
+      "id": "e11",
+      "title": "Agile Development Bootcamp",
+      "date": "2024-03-10",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "A bootcamp to master Agile methodologies."
+    },
+    {
+      "id": "e12",
+      "title": "Web Development Expo",
+      "date": "2024-08-02",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Showcase of the latest web development trends."
+    },
+    {
+      "id": "e13",
+      "title": "DevOps World",
+      "date": "2024-10-15",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Learn about the best practices in DevOps."
+    },
+    {
+      "id": "e14",
+      "title": "Mobile App Summit",
+      "date": "2024-05-23",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Focus on the latest trends in mobile app development."
+    },
+    {
+      "id": "e15",
+      "title": "Big Data Conference",
+      "date": "2024-09-18",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Exploring big data analytics and solutions."
+    },
+    {
+      "id": "e16",
+      "title": "UX/UI Design Workshop",
+      "date": "2024-07-25",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Hands-on workshop on creating user-friendly designs."
+    },
+    {
+      "id": "e17",
+      "title": "Blockchain Expo",
+      "date": "2024-06-10",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Dive into the future of blockchain technology."
+    },
+    {
+      "id": "e18",
+      "title": "Machine Learning Hackathon",
+      "date": "2024-11-19",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Compete in building innovative ML solutions."
+    },
+    {
+      "id": "e19",
+      "title": "E-Commerce Summit",
+      "date": "2024-04-05",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Exploring e-commerce strategies for success."
+    },
+    {
+      "id": "e20",
+      "title": "5G Technology Conference",
+      "date": "2024-08-30",
+      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
+      "description": "Understanding the impact of 5G on the tech industry."
     }
   ]
 }
