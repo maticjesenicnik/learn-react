@@ -1,6 +1,20 @@
 {
   "events": [
     {
+      "title": "Gathering around the fire",
+      "image": "https://images.pexels.com/photos/6667424/pexels-photo-6667424.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "date": "2024-12-25",
+      "description": "We will be gathering around the fire",
+      "id": "9b2fd138-de27-43ab-9004-af70eb9bcf0e"
+    },
+    {
+      "title": "A new event",
+      "image": "https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "date": "2024-10-24",
+      "description": "Qui nostrud et ea culpa commodo nisi sunt. Ut tempor consequat consectetur et aliqua culpa ea esse laboris. Labore consectetur aute amet officia aute.",
+      "id": "18d9d45f-4990-45ea-9051-768138f5e4f6"
+    },
+    {
       "id": "e1",
       "title": "A dummy event",
       "date": "2023-02-22",
