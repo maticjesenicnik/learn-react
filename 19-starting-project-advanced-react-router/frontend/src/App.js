@@ -40,7 +40,20 @@ const router = createBrowserRouter([
         path: "events",
         element: <EventsRootLayout />,
         children: [
-          { index: true, element: <Events /> },
+          {
+            index: true,
+            element: <Events />,
+            loader: async () => {
+              const response = await fetch("http://localhost:8080/events");
+
+              if (!response.ok) {
+                // ...
+              } else {
+                const data = await response.json();
+                return data.events;
+              }
+            },
+          },
           { path: ":id", element: <EventDetail /> },
           { path: "new", element: <NewEvent /> },
           { path: ":id/edit", element: <EditEvent /> },
