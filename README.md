@@ -21,6 +21,12 @@ Each folder represents a different project corresponding to specific sections of
 **13-starting-project-custom-hooks**: Creating custom hooks in React. <br>
 **14-starting-project-forms-and-user-input**: Managing forms and user input in React. <br>
 **15-starting-project-food-ordering-app**: Developing a food ordering app with React. <br>
+**16-starting-project-redux**: Learning Redux state management. <br>
+**17-starting-project-advanced-redux**: Implementing advanced Redux patterns and techniques. <br>
+**18-starting-project-react-router**: Exploring React Router for navigation. <br>
+**19-starting-project-advanced-react-router**: Implementing advanced React Router patters and techniques. <br>
+**20-starting-project-authentication**: Implementing authentication in React apps. <br>
+**21-starting-project-deployment**: Learning how to deploy React applications. <br>
 
 ## How to Run
 
