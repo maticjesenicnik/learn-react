@@ -37,7 +37,16 @@ export default function Challenges() {
       <ChallengeTabs challenges={filteredChallenges} onSelectType={handleSelectType} selectedType={selectedType}>
         <AnimatePresence mode="wait">
           {displayedChallenges.length > 0 && (
-            <motion.ol key="list" exit={{ y: -30, opacity: 0 }} className="challenge-items">
+            <motion.ol
+              key="list"
+              initial={{
+                opacity: 0,
+                y: -20,
+              }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ y: -30, opacity: 0 }}
+              className="challenge-items"
+            >
               <AnimatePresence>
                 {displayedChallenges.map(challenge => (
                   <ChallengeItem key={challenge.id} challenge={challenge} onViewDetails={() => handleViewDetails(challenge.id)} isExpanded={expanded === challenge.id} />
