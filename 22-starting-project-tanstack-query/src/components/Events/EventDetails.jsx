@@ -14,14 +14,13 @@ export default function EventDetails() {
     queryFn: ({ signal }) => fetchEvent({ id, signal }),
   });
 
-  const {
-    mutate: mutateDeleteEvent,
-    isPending: isDeletePending,
-    isError: isDeleteError,
-  } = useMutation({
+  const { mutate: mutateDeleteEvent } = useMutation({
     mutationFn: deleteEvent,
     onSuccess: () => {
-      queryClient.invalidateQueries(["events"]);
+      queryClient.invalidateQueries({
+        queryKey: ["events"],
+        refetchType: "none",
+      });
       navigate("/events");
     },
   });
@@ -29,6 +28,56 @@ export default function EventDetails() {
   const handleDeleteEvent = () => {
     mutateDeleteEvent({ id });
   };
+
+  let content;
+
+  if (isPending) {
+    content = (
+      <div id="event-details-content" className="center">
+        <p>Fetching event data...</p>
+      </div>
+    );
+  }
+
+  if (isError) {
+    content = (
+      <div id="event-details-content" className="center">
+        <ErrorBlock title="Error loading event information" message={error.info?.message || "There was an error while retrieving event information"} />
+      </div>
+    );
+  }
+
+  if (data) {
+    const formattedDate = new Date(data.date).toLocaleDateString("en-US", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
+
+    content = (
+      <>
+        <header>
+          <h1>{data.title}</h1>
+          <nav>
+            <button onClick={handleDeleteEvent}>Delete</button>
+            <Link to="edit">Edit</Link>
+          </nav>
+        </header>
+        <div id="event-details-content">
+          <img src={`http://localhost:3000/${data.image}`} alt={data.title} />
+          <div id="event-details-info">
+            <div>
+              <p id="event-details-location">{data.location}</p>
+              <time dateTime={`${data.date} ${data.time}`}>
+                {formattedDate} @ {data.time}
+              </time>
+            </div>
+            <p id="event-details-description">{data.description}</p>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -38,37 +87,7 @@ export default function EventDetails() {
           View all Events
         </Link>
       </Header>
-      {data && (
-        <article id="event-details">
-          {isPending && <p style={{ textAlign: "center" }}>Loading event information...</p>}
-          {isError && <ErrorBlock title="Error loading event information" message={error.info?.message || "There was an error while retrieving event information"} />}
-          {isDeleteError && <ErrorBlock title="Error deleting event" message="There was an erorr deleting the event. Please try again later" />}
-          <header>
-            <h1>{data.title}</h1>
-            <nav>
-              {isDeletePending && <p>Deleting event...</p>}
-              {!isDeletePending && (
-                <>
-                  <button onClick={handleDeleteEvent}>Delete</button>
-                  <Link to="edit">Edit</Link>
-                </>
-              )}
-            </nav>
-          </header>
-          <div id="event-details-content">
-            <img src={`http://localhost:3000/${data.image}`} alt="" />
-            <div id="event-details-info">
-              <div>
-                <p id="event-details-location">{data.location}</p>
-                <time dateTime={`${data.date} ${data.time}`}>
-                  {data.date} {data.time}
-                </time>
-              </div>
-              <p id="event-details-description">{data.description}</p>
-            </div>
-          </div>
-        </article>
-      )}
+      <article id="event-details">{content}</article>
     </>
   );
 }
