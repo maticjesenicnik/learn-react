@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { fetchEvent, updateEvent } from "../../util/http.js";
+import { fetchEvent, queryClient, updateEvent } from "../../util/http.js";
 
 import ErrorBlock from "../UI/ErrorBlock.jsx";
 import LoadingIndicator from "../UI/LoadingIndicator.jsx";
@@ -18,6 +18,19 @@ export default function EditEvent() {
 
   const { mutate } = useMutation({
     mutationFn: updateEvent,
+    onMutate: async data => {
+      await queryClient.cancelQueries({ queryKey: ["events", { id }] });
+      const previousEvent = queryClient.getQueryData(["events", { id }]);
+      queryClient.setQueryData(["events", { id }], data.event);
+
+      return { previousEvent };
+    },
+    onError: (error, data, context) => {
+      queryClient.setQueryData(["events", { id }], context.previousEvent);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: ["events", { id }] });
+    },
   });
 
   function handleSubmit(formData) {
