@@ -38,7 +38,7 @@ export default function Challenges() {
         <AnimatePresence mode="wait">
           {displayedChallenges.length > 0 && (
             <motion.ol
-              key="list"
+              key={selectedType}
               initial={{
                 opacity: 0,
                 y: -20,
