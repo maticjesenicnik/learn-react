@@ -31,6 +31,7 @@ Each folder represents a different project corresponding to specific sections of
 **23-starting-project-animating-react**: Learning how to animate React applications. <br>
 **24-starting-project-framer-motion-playground**: Playground for learning the basics of Framer Motion before using them in the **23-starting-project-animating-react**. <br>
 **25-starting-project-react-best-practices**: Learning React patterns and best practices. <br>
+**26-starting-project-replace-redux**: Replaxing Redux with React hooks. <br>
 
 ## How to Run
 
