@@ -29,7 +29,8 @@ Each folder represents a different project corresponding to specific sections of
 **21-starting-project-deployment**: Learning how to deploy React applications. <br>
 **22-starting-project-tanstack-query**: Learning how to use tanstack query with React applications. <br>
 **23-starting-project-animating-react**: Learning how to animate React applications. <br>
-**24-starting-project-framer-motion-playground**: Playground for learning the basics of Framer Motion before using them in the **23-starting-project-animating-react** <br>
+**24-starting-project-framer-motion-playground**: Playground for learning the basics of Framer Motion before using them in the **23-starting-project-animating-react**. <br>
+**25-starting-project-react-best-practices**: Learning React patterns and best practices. <br>
 
 ## How to Run
 
