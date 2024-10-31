@@ -1,8 +1,10 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 
+import { TodosContext } from "../store/todos-context";
 import classes from "./NewTodo.module.css";
 
-export default function NewTodo({ onAddTodo }: { onAddTodo: (id: string, text: string) => void }) {
+export default function NewTodo() {
+  const { addTodo } = useContext(TodosContext);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const submitHandler = (event: React.FormEvent) => {
@@ -14,7 +16,7 @@ export default function NewTodo({ onAddTodo }: { onAddTodo: (id: string, text: s
       return;
     }
 
-    onAddTodo(crypto.randomUUID(), enteredText);
+    addTodo(crypto.randomUUID(), enteredText);
     inputRef.current!.value = "";
   };
 
