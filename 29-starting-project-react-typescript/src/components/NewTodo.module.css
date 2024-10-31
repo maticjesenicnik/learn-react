@@ -39,3 +39,10 @@
   background-color: #ebc002;
   border-color: #ebc002;
 }
+
+.error {
+  color: #cb5656;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
