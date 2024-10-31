@@ -34,6 +34,7 @@ Each folder represents a different project corresponding to specific sections of
 **26-starting-project-replace-redux**: Replaxing Redux with React hooks. <br>
 **27-starting-project-unit-tests**: Learning how to write and execute unit tests for React <br>
 **28-starting-project-typescript-basics**: Learning the TypeScript basics in a non React project. <br>
+**28-starting-project-react-typescript**: Learning how to use TypeScript in React apps. <br>
 
 ## How to Run
 
