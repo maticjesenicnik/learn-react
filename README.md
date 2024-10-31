@@ -32,6 +32,8 @@ Each folder represents a different project corresponding to specific sections of
 **24-starting-project-framer-motion-playground**: Playground for learning the basics of Framer Motion before using them in the **23-starting-project-animating-react**. <br>
 **25-starting-project-react-best-practices**: Learning React patterns and best practices. <br>
 **26-starting-project-replace-redux**: Replaxing Redux with React hooks. <br>
+**27-starting-project-unit-tests**: Learning how to write and execute unit tests for React <br>
+**28-starting-project-typescript-basics**: Learning the TypeScript basics in a non React project. <br>
 
 ## How to Run
 
